@@ -16,6 +16,7 @@ public class ControllerTest {
         model.addAttribute("name", name);
         model.addAttribute("name", name);
         model.addAttribute("age",18);
+        model.addAttribute("age",18);
         return "show";
     }
 
