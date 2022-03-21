@@ -14,6 +14,7 @@ public class ControllerTest {
     public String test1(Model model){
         String name="springmvc";
         model.addAttribute("name", name);
+        model.addAttribute("age",18);
         return "show";
     }
 
