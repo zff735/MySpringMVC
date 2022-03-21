@@ -18,6 +18,7 @@ public class ControllerTest {
         model.addAttribute("age",18);
         model.addAttribute("age",18);
         model.addAttribute("age",18);
+        System.Out.println("hello git");
         return "show";
     }
 
