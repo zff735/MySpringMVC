@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传与下载</title>
+</head>
+<body>
+    <a th:href="@{/fileDown}">使用Response实现文件下载功能</a>
+    <form th:action="@{/fileup}" method="post" enctype="multipart/form-data">
+        <input type="file" name="photo">
+        <input type="submit" value="上传文件到服务器">
+    </form>
+</body>
+</html>

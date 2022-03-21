@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <a th:href="@{/testrequestmapping}">通过value属性跳转到success</a><br/>
+    <a th:href="@{/test}">通过value属性跳转到success</a><br/>
+    <a th:href="@{/test}">通过get方式请求success页面</a><br/>
+    <form th:action="@{/test}" method="post">
+        <input type="submit" value="通过post请求来访问success页面">
+    </form>
+<!--    在thymeleaf中传入参数用()包起来,多个参数之间用逗号隔开,字符串用单引号-->
+    <a th:href="@{/testParams(username='admin')}">测试params参数</a><br/>
+    <a th:href="@{/aaa}">测试ant风格匹配路径</a><br/>
+    <a th:href="@{/testPath/1/admin}">测试rest风格传参</a><br/>
+    <a th:href="@{/param}">测试获取请求参数</a><br/>
+</body>
+</html>

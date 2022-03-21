@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>success</h1>
+<!--在html中输出request中的数据-->
+<p th:text="${requestdata}"></p>
+<!--在html中输出session中的数据-->
+<p th:text="${session.sessionText}"></p>
+<!--在html中输出application中的数据-->
+<p th:text="${application.applicationText}"></p>
+</body>
+</html>

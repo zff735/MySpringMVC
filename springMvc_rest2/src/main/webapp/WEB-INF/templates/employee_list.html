@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/static/js/jquery-1.12.4.js}"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.delete').click(function(){
+                var href=$(this).attr('href');
+                var name=$(this).parent().siblings().eq(1).text();
+                $('#deleteForm').attr('action',href);
+                if(confirm("你确定要删除id为"+name+"的员工吗?")){
+                    $('#deleteForm').submit();
+                    return false;
+                }else{
+                    return false;
+                }
+
+            })
+        })
+    </script>
+</head>
+<body>
+<table border="1" cellpadding="0" cellspacing="0" style="text-align: center;" id="dataTable">
+    <tr>
+        <th colspan="5">Employee Info</th>
+    </tr>
+    <tr>
+        <th>id</th>
+        <th>lastName</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>options</th>
+    </tr>
+<!--    遍历request域中的数据-->
+    <tr th:each="employee:${allEmployee}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.gender}"></td>
+        <td>
+            <a th:href="@{/employee/{id}(id=${employee.id})}">修改</a>
+            <a th:href="@{/employee/{id}(id=${employee.id})}" class="delete">删除</a>
+        </td>
+    </tr>
+    <form method="post" id="deleteForm">
+        <input type="hidden" name="_method" value="DELETE">
+    </form>
+</table>
+</body>
+</html>
